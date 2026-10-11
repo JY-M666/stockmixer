@@ -28,19 +28,3 @@ In order to improve file reading speed, we process the raw data to generate corr
 python src/train.py
 ```
 
-## Fixed CSI300 pool with ALSTM Alpha360 input
-
-`src/train_qlib_fixed.py` uses the 300 CSI300 constituents on 2014-12-31 in
-`configs/csi300_2014-12-31.txt` for every trading day. It keeps one stock slot
-per constituent, masks unavailable rows, and uses ALSTM's six-feature,
-60-day Alpha360 input and feature processors. The original StockMixer model
-and loss are used; the target is the unranked ALSTM return label, with a
-normalized base price of 1. The original `src/train.py` is unchanged.
-
-```bash
-python src/train_qlib_fixed.py --provider-uri /path/to/qlib/cn_data
-```
-
-Train: 2008-01-01 to 2014-12-31; validation: 2015-01-01 to 2016-12-31;
-test: 2017-01-01 to 2020-08-01. This is a fixed-universe experiment and
-should be reported separately from a dynamic CSI300 ALSTM experiment.
