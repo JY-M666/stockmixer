@@ -70,6 +70,27 @@ class StockMixerInputTests(unittest.TestCase):
         self.assertEqual(task["model"]["kwargs"]["seq_len"], 60)
         self.assertEqual(task["dataset"]["kwargs"]["handler"]["class"], "Alpha360")
 
+    def test_fixed_universe_config_changes_only_the_universe_and_policy(self):
+        root = Path(__file__).resolve().parents[1]
+        config_dir = root / "examples/benchmarks/StockMixer"
+        dynamic = yaml.safe_load((config_dir / "workflow_config_stockmixer_Alpha360.yaml").read_text(encoding="utf-8"))
+        fixed = yaml.safe_load((config_dir / "workflow_config_stockmixer_Alpha360_fixed_20141231.yaml").read_text(encoding="utf-8"))
+        codes = (root / "universes/csi300_20141231.txt").read_text(encoding="utf-8").splitlines()
+        self.assertEqual(len(codes), 300)
+        self.assertEqual(len(set(codes)), 300)
+        self.assertEqual(codes, sorted(codes))
+        self.assertEqual(fixed["market"], codes)
+        handler = fixed["task"]["dataset"]["kwargs"]["handler"]["kwargs"]
+        self.assertEqual(handler["instruments"], codes)
+        self.assertEqual(fixed["task"]["model"]["kwargs"]["unknown_stock"], "error")
+        dynamic.pop("market")
+        fixed.pop("market")
+        dynamic["task"]["dataset"]["kwargs"]["handler"]["kwargs"].pop("instruments")
+        fixed["task"]["dataset"]["kwargs"]["handler"]["kwargs"].pop("instruments")
+        dynamic["task"]["model"]["kwargs"].pop("unknown_stock")
+        fixed["task"]["model"]["kwargs"].pop("unknown_stock")
+        self.assertEqual(dynamic, fixed)
+
 
 if __name__ == "__main__":
     unittest.main()

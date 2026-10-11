@@ -1,0 +1,388 @@
+# CSI300 membership frozen at 2014-12-31 from the Qlib provider.
+# Source instruments/csi300.txt SHA256: fc0b62443aaffbd1d3a6c7aa96a40fdbc054f73b3a33ed814222f45842ffbe64
+# Rebuild with scripts/build_fixed_universe.py if the provider changes.
+qlib_init:
+    provider_uri: "~/.qlib/qlib_data/cn_data"
+    region: cn
+market: &market
+    - SH600000
+    - SH600008
+    - SH600009
+    - SH600010
+    - SH600011
+    - SH600015
+    - SH600016
+    - SH600018
+    - SH600019
+    - SH600023
+    - SH600027
+    - SH600028
+    - SH600029
+    - SH600030
+    - SH600031
+    - SH600036
+    - SH600038
+    - SH600048
+    - SH600050
+    - SH600058
+    - SH600060
+    - SH600066
+    - SH600068
+    - SH600079
+    - SH600085
+    - SH600089
+    - SH600100
+    - SH600104
+    - SH600108
+    - SH600109
+    - SH600111
+    - SH600115
+    - SH600118
+    - SH600143
+    - SH600150
+    - SH600153
+    - SH600157
+    - SH600166
+    - SH600170
+    - SH600177
+    - SH600188
+    - SH600196
+    - SH600208
+    - SH600221
+    - SH600252
+    - SH600256
+    - SH600267
+    - SH600271
+    - SH600276
+    - SH600277
+    - SH600309
+    - SH600315
+    - SH600316
+    - SH600332
+    - SH600340
+    - SH600348
+    - SH600352
+    - SH600362
+    - SH600369
+    - SH600372
+    - SH600373
+    - SH600383
+    - SH600395
+    - SH600398
+    - SH600406
+    - SH600415
+    - SH600436
+    - SH600485
+    - SH600489
+    - SH600497
+    - SH600498
+    - SH600516
+    - SH600518
+    - SH600519
+    - SH600535
+    - SH600547
+    - SH600549
+    - SH600570
+    - SH600578
+    - SH600583
+    - SH600585
+    - SH600588
+    - SH600597
+    - SH600600
+    - SH600633
+    - SH600637
+    - SH600642
+    - SH600648
+    - SH600649
+    - SH600655
+    - SH600660
+    - SH600663
+    - SH600664
+    - SH600674
+    - SH600688
+    - SH600690
+    - SH600703
+    - SH600705
+    - SH600718
+    - SH600739
+    - SH600741
+    - SH600783
+    - SH600795
+    - SH600804
+    - SH600809
+    - SH600827
+    - SH600837
+    - SH600839
+    - SH600863
+    - SH600867
+    - SH600873
+    - SH600875
+    - SH600880
+    - SH600886
+    - SH600887
+    - SH600893
+    - SH600900
+    - SH600998
+    - SH600999
+    - SH601006
+    - SH601009
+    - SH601018
+    - SH601088
+    - SH601098
+    - SH601111
+    - SH601117
+    - SH601118
+    - SH601158
+    - SH601166
+    - SH601168
+    - SH601169
+    - SH601179
+    - SH601186
+    - SH601216
+    - SH601225
+    - SH601231
+    - SH601258
+    - SH601288
+    - SH601318
+    - SH601328
+    - SH601333
+    - SH601336
+    - SH601377
+    - SH601390
+    - SH601398
+    - SH601555
+    - SH601600
+    - SH601601
+    - SH601607
+    - SH601618
+    - SH601628
+    - SH601633
+    - SH601668
+    - SH601669
+    - SH601688
+    - SH601699
+    - SH601727
+    - SH601766
+    - SH601800
+    - SH601808
+    - SH601818
+    - SH601857
+    - SH601866
+    - SH601888
+    - SH601898
+    - SH601899
+    - SH601901
+    - SH601928
+    - SH601929
+    - SH601933
+    - SH601939
+    - SH601958
+    - SH601988
+    - SH601989
+    - SH601992
+    - SH601998
+    - SH603000
+    - SH603288
+    - SH603699
+    - SH603993
+    - SZ000001
+    - SZ000002
+    - SZ000009
+    - SZ000027
+    - SZ000039
+    - SZ000060
+    - SZ000061
+    - SZ000063
+    - SZ000069
+    - SZ000100
+    - SZ000156
+    - SZ000157
+    - SZ000166
+    - SZ000333
+    - SZ000338
+    - SZ000400
+    - SZ000401
+    - SZ000402
+    - SZ000413
+    - SZ000423
+    - SZ000425
+    - SZ000503
+    - SZ000536
+    - SZ000538
+    - SZ000559
+    - SZ000568
+    - SZ000581
+    - SZ000598
+    - SZ000623
+    - SZ000625
+    - SZ000629
+    - SZ000630
+    - SZ000651
+    - SZ000686
+    - SZ000709
+    - SZ000725
+    - SZ000728
+    - SZ000729
+    - SZ000738
+    - SZ000750
+    - SZ000768
+    - SZ000776
+    - SZ000778
+    - SZ000783
+    - SZ000792
+    - SZ000793
+    - SZ000800
+    - SZ000825
+    - SZ000826
+    - SZ000831
+    - SZ000839
+    - SZ000858
+    - SZ000869
+    - SZ000876
+    - SZ000878
+    - SZ000883
+    - SZ000895
+    - SZ000898
+    - SZ000917
+    - SZ000937
+    - SZ000960
+    - SZ000963
+    - SZ000970
+    - SZ000983
+    - SZ000999
+    - SZ001979
+    - SZ002001
+    - SZ002007
+    - SZ002008
+    - SZ002024
+    - SZ002038
+    - SZ002051
+    - SZ002065
+    - SZ002081
+    - SZ002129
+    - SZ002142
+    - SZ002146
+    - SZ002153
+    - SZ002202
+    - SZ002230
+    - SZ002236
+    - SZ002241
+    - SZ002252
+    - SZ002292
+    - SZ002294
+    - SZ002304
+    - SZ002310
+    - SZ002344
+    - SZ002353
+    - SZ002375
+    - SZ002385
+    - SZ002399
+    - SZ002400
+    - SZ002410
+    - SZ002415
+    - SZ002416
+    - SZ002422
+    - SZ002429
+    - SZ002450
+    - SZ002456
+    - SZ002465
+    - SZ002470
+    - SZ002475
+    - SZ002500
+    - SZ002570
+    - SZ002594
+    - SZ002603
+    - SZ002653
+    - SZ002673
+    - SZ300003
+    - SZ300015
+    - SZ300017
+    - SZ300024
+    - SZ300027
+    - SZ300058
+    - SZ300070
+    - SZ300124
+    - SZ300133
+    - SZ300146
+    - SZ300251
+benchmark: &benchmark SH000300
+data_handler_config: &data_handler_config
+    start_time: 2008-01-01
+    end_time: 2020-08-01
+    fit_start_time: 2008-01-01
+    fit_end_time: 2014-12-31
+    instruments: *market
+    infer_processors:
+        - class: RobustZScoreNorm
+          kwargs:
+              fields_group: feature
+              clip_outlier: true
+        - class: Fillna
+          kwargs:
+              fields_group: feature
+    learn_processors:
+        - class: DropnaLabel
+        - class: CSRankNorm
+          kwargs:
+              fields_group: label
+    label: ["Ref($close, -2) / Ref($close, -1) - 1"]
+port_analysis_config: &port_analysis_config
+    strategy:
+        class: TopkDropoutStrategy
+        module_path: qlib.contrib.strategy
+        kwargs:
+            signal: <PRED>
+            topk: 50
+            n_drop: 5
+    backtest:
+        start_time: 2017-01-01
+        end_time: 2020-08-01
+        account: 100000000
+        benchmark: *benchmark
+        exchange_kwargs:
+            limit_threshold: 0.095
+            deal_price: close
+            open_cost: 0.0005
+            close_cost: 0.0015
+            min_cost: 5
+task:
+    model:
+        class: StockMixerQlib
+        module_path: src.qlib_adapter
+        kwargs:
+            d_feat: 6
+            seq_len: 60
+            market_num: 20
+            n_epochs: 200
+            lr: 0.001
+            early_stop: 20
+            GPU: 0
+            seed: 0
+            unknown_stock: error
+    dataset:
+        class: DatasetH
+        module_path: qlib.data.dataset
+        kwargs:
+            handler:
+                class: Alpha360
+                module_path: qlib.contrib.data.handler
+                kwargs: *data_handler_config
+            segments:
+                train: [2008-01-01, 2014-12-31]
+                valid: [2015-01-01, 2016-12-31]
+                test: [2017-01-01, 2020-08-01]
+    record:
+        - class: SignalRecord
+          module_path: qlib.workflow.record_temp
+          kwargs:
+            model: <MODEL>
+            dataset: <DATASET>
+        - class: SigAnaRecord
+          module_path: qlib.workflow.record_temp
+          kwargs:
+            ana_long_short: False
+            ann_scaler: 252
+        - class: PortAnaRecord
+          module_path: qlib.workflow.record_temp
+          kwargs:
+            config: *port_analysis_config
