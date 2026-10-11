@@ -177,7 +177,9 @@ class NoGraphMixer(nn.Module):
 class StockMixer(nn.Module):
     def __init__(self, stocks, time_steps, channels, market, scale):
         super(StockMixer, self).__init__()
-        scale_dim = 8
+        self.time_steps = time_steps
+        self.channels = channels
+        scale_dim = time_steps // 2
         self.mixer = MultTime2dMixer(time_steps, channels, scale_dim=scale_dim)
         self.channel_fc = nn.Linear(channels, 1)
         self.time_fc = nn.Linear(time_steps * 2 + scale_dim, 1)
@@ -186,6 +188,8 @@ class StockMixer(nn.Module):
         self.time_fc_ = nn.Linear(time_steps * 2 + scale_dim, 1)
 
     def forward(self, inputs):
+        if inputs.ndim == 2:
+            inputs = inputs.reshape(inputs.shape[0], self.channels, self.time_steps).permute(0, 2, 1)
         x = inputs.permute(0, 2, 1)
         x = self.conv(x)
         x = x.permute(0, 2, 1)
@@ -196,4 +200,3 @@ class StockMixer(nn.Module):
         y = self.time_fc(y)
         z = self.time_fc_(z)
         return y + z
-
